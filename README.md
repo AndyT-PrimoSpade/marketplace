@@ -1,42 +1,44 @@
-# create-svelte
+#This is a README.md doc for the marketplace (Not Completed Demo) project using SvelteKit with MySQL and Bootstrap:
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## How to install
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+To install the dependencies for this project, run the following command in your terminal:
+``` bash
+npm install
 ```
+This will install all of the necessary dependencies, including SvelteKit, MySQL, and Bootstrap.
 
-## Developing
+## How to run
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
+To run the project, run the following command in your terminal:
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
+This will start a development server.
 
-## Building
+## What we are using
 
-To create a production version of your app:
+This example project is using the following technologies:
 
-```bash
-npm run build
-```
+SvelteKit: A lightweight modern web framework that builds modern, fast web applications.
+MySQL: A popular open-source relational database management system (RDBMS).
+Bootstrap: A popular front-end CSS framework.
 
-You can preview the production build with `npm run preview`.
+## Database Schema
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Database schema is location in the root [Database_Schema.md](/Database_Schema.md)
+
+Database schema can be changed depending on Database type
+
+Framework can also be change to react
+
+## Wireframe Design
+
+### Sitemap Flow Design
+
+![Board Marketplace](https://github.com/JJ-Innovation/smeplify-marketplace/assets/119803261/ea8c0361-fb57-4090-b1df-67b0b80ba288)
 
 
-Testing Testing
+### Page Design
 
+![Wireframe Marketplace](https://github.com/JJ-Innovation/smeplify-marketplace/assets/119803261/b4c90a4e-9489-45c4-9386-61d6ea5cdffd)
