@@ -36,9 +36,10 @@ Framework can also be change to react
 
 ### Sitemap Flow Design
 
-![Board Marketplace](https://github.com/JJ-Innovation/smeplify-marketplace/assets/119803261/ea8c0361-fb57-4090-b1df-67b0b80ba288)
-
+![Board Marketplace](https://github.com/AndyT-PrimoSpade/marketplace/assets/93958328/f8027d97-c635-4ca4-8d0e-1ba5d108240c)
 
 ### Page Design
 
-![Wireframe Marketplace](https://github.com/JJ-Innovation/smeplify-marketplace/assets/119803261/b4c90a4e-9489-45c4-9386-61d6ea5cdffd)
+![Wireframe Marketplace](https://github.com/AndyT-PrimoSpade/marketplace/assets/93958328/42b165cf-66b4-4f18-9148-d36752dac67e)
+
+
