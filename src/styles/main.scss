@@ -1,0 +1,32 @@
+:root {
+    --back-color: #191414;
+    --text-color:#fff;
+    --accent-color: #1db954;
+
+
+
+}
+
+body {
+    font-family: 'Times New Roman', sans-serif;
+    background-color: var(--back-color);
+    color: var(--text-color);
+}
+
+::selection{
+
+
+}
+
+h1,h2,h3,h4,h5,h5{
+
+}
+
+select,input,button, a{
+    &:focus-visible{
+        outline: 2px solid var(--accent-color);
+        outline-offset: 2px
+
+    }
+
+}
