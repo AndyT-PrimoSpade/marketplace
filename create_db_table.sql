@@ -1,0 +1,90 @@
+-- CREATE DATABASE marketplace;
+-- USE marketplace;
+
+CREATE TABLE Companies (
+  CompanyID INT NOT NULL AUTO_INCREMENT,
+  CompanyName VARCHAR(255) NOT NULL,
+  CompanyAddress VARCHAR(255) NOT NULL,
+  ACRA VARCHAR(10) NOT NULL,
+  Phone VARCHAR(15) NOT NULL,
+  Industry VARCHAR(255) NOT NULL,
+  Logo VARCHAR(255),
+  JoinDate DATE NOT NULL,
+  PRIMARY KEY (CompanyID)
+);
+
+CREATE TABLE Users (
+  UserID INT NOT NULL AUTO_INCREMENT,
+  CompanyID INT NOT NULL,
+  FirstName VARCHAR(255) NOT NULL,
+  LastName VARCHAR(255) NOT NULL,
+  Email VARCHAR(255) NOT NULL,
+  PasswordHash VARCHAR(255) NOT NULL,
+  JobRole VARCHAR(255) NOT NULL,
+  PRIMARY KEY (UserID),
+  FOREIGN KEY (CompanyID) REFERENCES Companies(CompanyID)
+);
+
+CREATE TABLE Categories (
+  CategoryID INT NOT NULL AUTO_INCREMENT,
+  MainCategory VARCHAR(255) NOT NULL,
+  SubCategory VARCHAR(255) NOT NULL,
+  PRIMARY KEY (CategoryID)
+);
+
+CREATE TABLE Products (
+  ProductID INT NOT NULL AUTO_INCREMENT,
+  CategoryID INT NOT NULL,
+  BrandName VARCHAR(255) NOT NULL,
+  ProductName VARCHAR(255) NOT NULL,
+  Description TEXT NOT NULL,
+  Image VARCHAR(255),
+  PRIMARY KEY (ProductID),
+  FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
+);
+
+CREATE TABLE ProductPricing (
+  PricingID INT NOT NULL AUTO_INCREMENT,
+  ProductID INT NOT NULL,
+  TermLength INT NOT NULL,
+  Price DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (PricingID),
+  FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+CREATE TABLE Orders (
+  OrderID INT NOT NULL AUTO_INCREMENT,
+  UserID INT NOT NULL,
+  CompanyID INT NOT NULL,
+  TotalAmount DECIMAL(10,2) NOT NULL,
+  CreatedDate DATETIME NOT NULL,
+  OrderStatus VARCHAR(255),
+  PRIMARY KEY (OrderID),
+  FOREIGN KEY (UserID) REFERENCES Users(UserID),
+  FOREIGN KEY (CompanyID) REFERENCES Companies(CompanyID)
+);
+
+CREATE TABLE Cart (
+  CartID INT NOT NULL AUTO_INCREMENT,
+  ProductID INT NOT NULL,
+  Quantity INT NOT NULL,
+  UnitPrice DECIMAL(10,2) NOT NULL,
+  TermLength INT NOT NULL,
+  IsCheckedOut BOOLEAN NOT NULL DEFAULT FALSE,
+  OrderID INT,
+  PRIMARY KEY (CartID),
+  FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+CREATE TABLE Subscriptions (
+  SubscriptionID INT NOT NULL AUTO_INCREMENT,
+  CompanyID INT NOT NULL,
+  ProductID INT NOT NULL,
+  SubscriptionStartDate DATE NOT NULL,
+  SubscriptionEndDate DATE NOT NULL,
+  CartID INT NOT NULL,
+  PRIMARY KEY (SubscriptionID),
+  FOREIGN KEY (CompanyID) REFERENCES Companies(CompanyID),
+  FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
+  FOREIGN KEY (CartID) REFERENCES Cart(CartID)
+);
