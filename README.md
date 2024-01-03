@@ -1,4 +1,4 @@
-#This is a README.md doc for the marketplace (Not Completed Demo) project using SvelteKit with MySQL and Bootstrap:
+#This is a Learning and Testing for Svelte doc for the marketplace (Not Completed Demo) project using SvelteKit with MySQL and Bootstrap:
 
 ## How to install
 
